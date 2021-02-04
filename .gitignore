@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/jvmmetadata
+jvmmetadata.so
+jvmmetadata.dylib
+jvmmetadata.dll
+jvmmetadata.a
+jvmmetadata.lib
+jvmmetadata-test-*
+*.exe
+*.o
+*.obj
+*.lst

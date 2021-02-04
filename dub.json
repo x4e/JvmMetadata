@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"x4e"
+	],
+	"copyright": "Copyright © 2021, x4e",
+	"dependencies": {
+		"elf-d": "~>0.2.5"
+	},
+	"description": "View the metadata of running Hotspot based Jvms",
+	"license": "GNU AGPLv3",
+	"name": "jvmmetadata"
+}
