@@ -57,13 +57,17 @@ void main(const string[] args) {
 		writefln("%s: %s %s", name, sym.sectionIndex, sym.value);
 	}
 	
-	auto gHotSpotVMTypes = symbols["gHotSpotVMTypes"];
-	auto typesBase = libBase + gHotSpotVMTypes.value;
+	auto typesBase = getSymbol(libBase, symbols, "gHotSpotVMTypes");
 	typesBase = readLong(memory, typesBase); // deref
 	if (typesBase == 0) {
 		writeln("gHotSpotVMTypes not initialised in target vm");
 		return;
 	}
+}
+
+/// Returns a pointer to the data specified by the given symbol
+long getSymbol(long libBase, ELFSymbol[string] symbols, string name) {
+	return libBase + symbols[name].value;
 }
 
 /// Read a signed 64bit long from the file at the offset given
